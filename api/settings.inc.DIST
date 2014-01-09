@@ -1,0 +1,27 @@
+<?php
+/** START MEMCACHE SETTINGS **/
+define('MEMCACHE_HOST','localhost');
+define('MEMCACHE_PORT','112211');
+/** END MEMCACHE SETTINGS **/
+/** START FS SETTINGS **/
+define('FS_ESL_HOST','localhost');
+define('FS_ESL_PORT','8021');
+define('FS_ESL_PASSWORD','ClueCon');
+// Call Center Queue Names
+define('CALLCENTER_QUEUES','queue1,queue2,queue3');
+define('FS_CONF_DIR','/etc/freeswitch');
+define('FS_DOMAIN','default');
+/** END FS SETTINGS **/
+/** START CIDNAME API VALUES **/
+// You can use any CID Lookup System you want as long
+// as you can break up the URL as such
+// By Default we have my.cidname.com in here
+// just add you Key
+define('CIDNAME_APIT_KEY','');
+define('CIDNAME_HOST','https://dip.cidname.com/');
+define('CIDNAME_OPTIONS','&output=json&reply=0');
+/** END CIDNAME API VALUES **/
+
+// This key is for api calls that would modify system settings/file/commands
+global $access_key;
+$access_key = "";
