@@ -1,0 +1,59 @@
+<div class="table-responsive" ng-repeat="(key, queue) in queues">
+  <table class="table table-bordered table-striped">
+	  <h2 class="lead">{{key}}</h2>
+	  <thead>
+		  <tr>
+			  <th>Name</th>
+			  <th>Status</th>
+			  <th>State</th>
+			  <th>No Answer Count</th>
+			  <th>Calls Answered</th>
+			  <th>Extension</th>
+			  <th>Queue</th>
+			  <th>Queue State</th>
+			  <th>Level</th>
+			  <th>Position</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+		  <tr ng-repeat="agent in queue.agents">
+			  <td>{{agent.name}}</td>
+			  <td>{{agent.status}}</td>
+			  <td>{{agent.state}}</td>
+			  <td>{{agent.no_answer_count}}</td>
+			  <td>{{agent.calls_answered}}</td>
+			  <td>{{agent.extension}}</td>
+			  <td>{{agent.queue}}</td>
+			  <td>{{agent.queue_state}}</td>
+			  <td>{{agent.level}}</td>
+			  <td>{{agent.position}}</td>
+		  </tr>
+	  </tbody>
+  </table>
+  <table class="table table-bordered table-striped">
+	  <thead>
+		  <tr>
+			  <th>Queue</th>
+			  <th>CID Number</th>
+			  <th>CID Name</th>
+			  <th>Base Score</th>
+			  <th>Skill Score</th>
+			  <th>Serving Agent</th>
+			  <th>State</th>
+              <th>Hold Time (Min:Sec)</th>
+		  </tr>
+	  </thead>
+	  <tbody>
+		  <tr ng-repeat="call in queue.callers">
+			  <td>{{call.queue}}</td>
+			  <td>{{call.cid_number}}</td>
+			  <td>{{call.cid_name}}</td>
+			  <td>{{call.base_score}}</td>
+			  <td>{{call.skill_score}}</td>
+			  <td>{{call.serving_agent}}</td>
+			  <td>{{call.state}}</td>
+              <td>{{call.hold_time}}</td>
+		  </tr>
+	  </tbody>
+  </table>
+</div>
