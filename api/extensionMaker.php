@@ -1,6 +1,7 @@
 <?php
-include('settings.inc');
-include('lib/callcenter_lib.inc');
+chdir(__DIR__);
+include('./settings.inc');
+include('lib/user_lib.inc');
 
 $data = array(
     'access_key' => '',
@@ -27,7 +28,10 @@ $data = array(
     )
 );
 
-//echo json_encode($data);
-echo createExtension($data);
+if (createExtension($data)){
+    echo "User has been made. Please reloadxml in the FreeSwitch Console".PHP_EOL;
+} else {
+    echo "Failed to make User".PHP_EOL;
+}
 
 ?>

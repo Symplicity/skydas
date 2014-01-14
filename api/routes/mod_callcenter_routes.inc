@@ -37,7 +37,20 @@ $app->get('/:queue/tiers',function($queue) use ($app) {
 	}
 });
 
-$app->get('/tiers',function() use ($app) {
+$app->get('/queues/fetch',function() use ($app) {
+	$queues = fetchQueues(); 
+	foreach($queues as $k => $v){
+    	$q[$v] = array('agents' => array(),'callers' => array());
+	}
+	$output = json_encode($q, JSON_FORCE_OBJECT);
+    if (!is_null($output)){
+        $app->render(200,array('msg' => $output,));
+    } else {
+        $app->render(400, array('msg' =>'ESL Failed to produce usable data', 'error' => true));
+    }
+});
+
+$app->get('/queues/tiers',function() use ($app) {
 	$output = eslCommand("callcenter_config tier list");
 	$tiers = eslParser($output);
     if (!is_null($tiers)){
