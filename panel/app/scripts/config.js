@@ -3,6 +3,8 @@ var config_data = {
     'API_URL': 'http://voip.symplicity.com/api'
   }
 }
-angular.forEach(config_data,function(key,value) {
-  callstatsApp.constant(value,key);
-});
+var callstatsApp = angular.module('config'){
+	angular.forEach(config_data,function(key,value) {
+  		callstatsApp.constant(value,key);
+	});
+}
