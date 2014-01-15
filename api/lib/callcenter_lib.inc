@@ -2,6 +2,8 @@
 
 /**
 Mod_callcenter library
+
+All Mod_Callcenter API information should be put in here. All Functions, etc
 */
 
 function agentListBuilder($agents, $tiers){

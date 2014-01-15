@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('callstatsApp', [])
+angular.module('callstatsApp',[])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -10,4 +10,5 @@ angular.module('callstatsApp', [])
       .otherwise({
         redirectTo: '/'
       });
-  });
+      }).run(function() {
+	  });

@@ -1,24 +1,18 @@
 'use strict';
 
 angular.module('callstatsApp')
-  .controller('MainCtrl', function ($scope, $http) {	  
-	  $scope.queues = {
-		  'queue1' : {
-			  'agents':{},
-			  'callers':{}
-		  },
-		  'queue2' : {
-		      'agents':{},
-			  'callers':{}
-		  },
-		  'queue3' : {
-			  'agents':{},
-			  'callers':{}
-		  },
-		  'queue4' : {
-			  'agents':{},
-			  'callers':{}
-		  }
+    .controller('MainCtrl', function ($scope, $http, config) {
+	   $scope.url = config.PANEL.API_URL;
+	  
+	  $scope.loadQueues = function () {
+	  	(function(){
+	  		var httpRequest = $http({
+	  			method: 'GET',
+	  			url: ($scope.url + '/queues/fetch'),
+	  		}).success(function(data,status){
+	  			$scope.queues = data.msg; 
+	  		});
+	  	}());
 	  }
 	  	  
       $scope.loadCalls = function() {
@@ -26,8 +20,7 @@ angular.module('callstatsApp')
 			  (function () {
 			             var httpRequest = $http({
 			                 method: 'GET',
-			                 url: 'http://freeswitch.example.com/callcenter/queues/all',     
-
+			                 url: ($scope.url + '/queues/all'),     
 			         }).success(function(data, status) {
 							                 $scope.queues = data.msg;
 			         });
@@ -36,6 +29,6 @@ angular.module('callstatsApp')
         	$scope.loadCalls();
     	}, 30000);		
       } 
-
+    $scope.loadQueues();
 	$scope.loadCalls();
   });

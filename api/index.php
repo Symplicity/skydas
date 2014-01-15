@@ -8,8 +8,15 @@ require_once('./lib/EventSocketLayer.php');
 require_once('./lib/freeswitch_lib.inc');
 
 if (empty($access_key)){
-    echo "SETUP IS NOT VALID YOU MUST SET $access_key IN settings.inc";
+    echo "SETUP IS NOT VALID YOU MUST SET $access_key IN settings.inc".PHP_EOL;
     exit;
+}
+
+if (!extension_loaded('ESL')) {
+	if (!dl('ESL.so')){
+		echo "You Must have the FreeSwitch ESL PHP Module Loaded".PHP_EOL;
+		exit;
+	}
 }
 
 $app = new \Slim\Slim();
