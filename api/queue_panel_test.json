@@ -1,0 +1,73 @@
+{
+    "msg": {
+        "sales": {
+            "agents": {
+                "1000@fs1.fs.io": {
+                    "name": "John Smith",
+                    "status": "Available",
+                    "state": "In a queue call",
+                    "no_answer_count": "0",
+                    "calls_answered": "14",
+                    "extension": "1000@fs1.fs.io",
+                    "queue": "sales@fs1.fs.io",
+                    "queue_state": "Active Inbound",
+                    "level": "1",
+                    "position": "1"
+                },
+                "2000@default": {
+                    "name": "Jonny Appleseed",
+                    "status": "Available",
+                    "state": "Receiving",
+                    "no_answer_count": "1",
+                    "calls_answered": "4",
+                    "extension": "2000@fs1.fs.io",
+                    "queue": "sales@fs1.fs.io",
+                    "queue_state": "Offering",
+                    "level": "1",
+                    "position": "1"
+                }
+            },
+            "callers": [
+                {
+                    "queue": "sales@fs1.fs.io",
+                    "system": "single_box",
+                    "uuid": "c8518250-7d47-11e3-b47f-e12a2a772946",
+                    "session_uuid": "c31a0e74-7d47-11e3-b465-e12a2a772946",
+                    "cid_number": "+12125552000",
+                    "cid_name": "Joe St. Smith",
+                    "system_epoch": "1389723292",
+                    "joined_epoch": "1389723300",
+                    "rejoined_epoch": "0",
+                    "bridge_epoch": "1389723445",
+                    "abandoned_epoch": "0",
+                    "base_score": "0",
+                    "skill_score": "0",
+                    "serving_agent": "1000@fs1.fs.io",
+                    "serving_system": "single_box",
+                    "state": "Answered"
+                },
+                {
+                    "queue": "sales@fs1.fs.io",
+                    "system": "single_box",
+                    "uuid": "b69e50d2-7d48-11e3-b66c-e12a2a772946",
+                    "session_uuid": "b18ab8d8-7d48-11e3-b65d-e12a2a772946",
+                    "cid_number": "+16125551385",
+                    "cid_name": "TOWN OF PETE",
+                    "system_epoch": "1389723692",
+                    "joined_epoch": "1389723700",
+                    "rejoined_epoch": "0",
+                    "hold_time": "3:52",
+                    "bridge_epoch": "0",
+                    "abandoned_epoch": "0",
+                    "base_score": "0",
+                    "skill_score": "0",
+                    "serving_agent": "2000@fs1.fs.io",
+                    "serving_system": "single_box",
+                    "state": "Trying"
+                }
+            ]
+        }
+    },
+    "error": false,
+    "status": 200
+}

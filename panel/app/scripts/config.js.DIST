@@ -1,0 +1,6 @@
+angular.module('callstatsApp').
+    constant('config',  {
+  'PANEL': {
+    'API_URL': 'http://skydas.example.com/api'
+  }
+	});
