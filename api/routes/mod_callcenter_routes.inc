@@ -38,11 +38,11 @@ $app->get('/:queue/tiers',function($queue) use ($app) {
 });
 
 $app->get('/queues/fetch',function() use ($app) {
-	$queues = fetchQueues(); 
-	foreach($queues as $k => $v){
-    	$q[$v] = array('agents' => array(),'callers' => array());
+	$queues = getQueues(); 
+	foreach($queues as $v){
+    	$output[$v] = array('agents' => new StdClass,'callers' => new StdClass);
 	}
-	$output = json_encode($q, JSON_FORCE_OBJECT);
+//	$output = json_encode($q, JSON_FORCE_OBJECT);
     if (!is_null($output)){
         $app->render(200,array('msg' => $output,));
     } else {

@@ -1,10 +1,10 @@
 var config_data = {
-  'PANEL_CONFIG': {
-    'API_URL': 'http://voip.symplicity.com/api'
+  'PANEL': {
+    'API_URL': 'http://voip.symplicity.com/api-devel'
   }
 }
-var callstatsApp = angular.module('config'){
+var callstatsApp = angular.module('config',function(){
 	angular.forEach(config_data,function(key,value) {
   		callstatsApp.constant(value,key);
 	});
-}
+});
