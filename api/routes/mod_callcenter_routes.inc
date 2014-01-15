@@ -97,3 +97,13 @@ $app->get('/validate/:queue',  function($queue) use ($app){
 	    $app->render(200,array('msg' => array("validate" => "false")));
     }
 });
+
+$app->post('/queues/dnd/:agent/:state', function($agent,$state) use ($app){
+	if ($state == 'on'){
+		$output = eslCommand("callcenter_config agent set status ".$agent.FS_DOMAIN." 'On Break'");
+		$output = eslCommand("callcenter_config agent set state ".$agent.FS_DOMAIN." 'Idle'");
+	} elseif ($state == 'off'){
+		$output = eslCommand("callcenter_config agent set status ".$agent.FS_DOMAIN." 'Available'");
+		$output = eslCommand("callcenter_config agent set state ".$agent.FS_DOMAIN." 'Waiting'");
+	}
+});
