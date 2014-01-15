@@ -1,15 +1,16 @@
 'use strict';
 
-angular.module('callstatsApp',['config'])
-  .controller('MainCtrl', function ($scope, $http) {	  
+angular.module('callstatsApp')
+    .controller('MainCtrl', function ($scope, $http, config) {
+	   $scope.url = config.PANEL.API_URL;
+	  
 	  $scope.loadQueues = function () {
-
 	  	(function(){
 	  		var httpRequest = $http({
 	  			method: 'GET',
-	  			url: (config_data.PANEL.API_URL + '/queues/fetch'),
+	  			url: ($scope.url + '/queues/fetch'),
 	  		}).success(function(data,status){
-	  			$scopes.queues = data.msg; 
+	  			$scope.queues = data.msg; 
 	  		});
 	  	}());
 	  }
@@ -19,7 +20,7 @@ angular.module('callstatsApp',['config'])
 			  (function () {
 			             var httpRequest = $http({
 			                 method: 'GET',
-			                 url: (PANEL.API_URL + '/callcenter/queues/all'),     
+			                 url: ($scope.url + '/queues/all'),     
 			         }).success(function(data, status) {
 							                 $scope.queues = data.msg;
 			         });
