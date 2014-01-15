@@ -10,3 +10,7 @@ function cidLookup($cid) {
       $result = json_decode($result);
       return $result;
 }
+
+function connectCall($user_uuid, $caller_uuid){
+	
+}
