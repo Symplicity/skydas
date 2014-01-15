@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Skydas by Symplicity</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Skydas</h1>
+          <h2>FreeSwitch PHP API and Angular JS Mod_Callcenter Panel</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Symplicity/skydas/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Symplicity/skydas/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Symplicity/skydas" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="skydas" class="anchor" href="#skydas"><span class="octicon octicon-link"></span></a>Skydas</h1>
+
+<p>Skydas is a ESL API and Angluar JS Panel for Freeswitch using PHP and ESL.</p>
+
+<ul>
+<li>Uses Slim PHP and FS EventSocket Layer</li>
+<li>Angualr JS for a Mod_Callcenter Web Interface</li>
+</ul><h2>
+<a name="panel" class="anchor" href="#panel"><span class="octicon octicon-link"></span></a>Panel</h2>
+
+<p>The Panel is all powered by Angular JS and is live updating</p>
+
+<hr><h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+
+<p>Please install the ESL PHP module from FreeSwitch Src on 1.2.stable see <a href="https://wiki.freeswitch.org/wiki/PHP_ESL">PHP ESL</a></p>
+
+<pre><code>Git clone to your web directory
+git clone https://github.com/Symplicity/skydas
+
+point a Apache / Nginx / Lighttpd host at it
+cd skydas/api/
+cp settings.inc.DIST settings.inc (Updated with your information)
+cd ../panel/app/scripts
+cp config.js.DIST config.js (Update with your API_HOST url)
+
+load in browser supporting js at http://&lt;url&gt;/panel and http://&lt;url&gt;/api/
+</code></pre>
+
+<hr><h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>Api</h2>
+
+<ul>
+<li>Here is a list of commands, all data is returned in JSON</li>
+<li>Require that all POST Requests are in JSON</li>
+</ul><p><strong>API Commands</strong></p>
+
+<ul>
+<li>/user/:exten -&gt; Returns Username
+<code>
+{"msg":"Richard Genthner","error":false,"status":200}
+</code>
+</li>
+<li>/:queue/agents -&gt; Returns All Agents in Given Queue
+<code>
+{
+"msg": {
+    "1003@default": {
+        "name": "Sue Smith",
+        "status": "Available",
+        "state": "Receiving",
+        "no_answer_count": "1",
+        "calls_answered": "16",
+        "extension": "1003@default",
+        "queue": "queue1@default",
+        "queue_state": "Offering",
+        "level": "1",
+        "position": "1"
+    }
+},
+"error": false,
+"status": 200
+</code>
+</li>
+<li>/:queue/tiers -&gt; Returns All Agent Tiers in Given Queue
+<code>
+{
+"msg": [
+    {
+        "queue": "queue1@default",
+        "agent": "1006@default",
+        "state": "No Answer",
+        "level": "1",
+        "position": "1"
+    },
+    {
+        "queue": "queue1@default",
+        "agent": "1002@default",
+        "state": "No Answer",
+        "level": "1",
+        "position": "1"
+    }
+],
+"error": false,
+"status": 200
+}
+</code>
+</li>
+<li>/:queue/callers -&gt; Returns All Callerss in Given Queue
+<code>
+{
+"msg": [
+    {
+        "queue": "queue1@default",
+        "system": "single_box",
+        "uuid": "ce2a7a0c-2ada-11e3-86e3-b1e2db555261",
+        "session_uuid": "cacd7fc6-2ada-11e3-86da-b1e2db555261",
+        "cid_number": "+15552785621",
+        "cid_name": "+15552785621",
+        "system_epoch": "1380660500",
+        "joined_epoch": "1380660500",
+        "rejoined_epoch": "0",
+        "bridge_epoch": "1380660522",
+        "abandoned_epoch": "0",
+        "base_score": "0",
+        "skill_score": "0",
+        "serving_agent": "1009@default",
+        "serving_system": "single_box",
+        "state": "Answered"
+    }
+],
+"error": false,
+"status": 200
+}
+</code>
+</li>
+<li>/status -&gt; Returns FreeSwitch Status
+<code>
+  {
+  "msg": {
+      "UP0years,
+      0days,
+      19hours,
+      34minutes,
+      45seconds,
+      898milliseconds,
+      829microseconds": "FreeSWITCH(Version1.2.13gitc26e2ec2013-09-1815: 05: 04Z)isready"
+  },
+  "error": false,
+  "status": 200
+  }
+</code>
+</li>
+<li>
+<p>/tiers -&gt; Returns Teirs for all queues</p>
+
+<pre><code>{
+"msg": [
+    {
+        "queue": "queue2@default",
+        "agent": "1002@default",
+        "state": "Ready",
+        "level": "1",
+        "position": "1"
+    },
+    {
+        "queue": "queue1@default",
+        "agent": "1002@default",
+        "state": "No Answer",
+        "level": "1",
+        "position": "1"
+    }
+],
+"error": false,
+"status": 200
+}
+</code></pre>
+</li>
+<li>
+<p>/create/extension -&gt; (POST) requires the following JSON object -&gt; Returns true or false</p>
+
+<pre><code>{
+"access_key": "my super key here",
+"action":"reloadxml",
+"user_id": "9999",
+"params": {
+    "password": "123",
+    "vm-password": "1234",
+    "vm-email-all-messages": "true",
+    "vm-notify-mailto": "true",
+    "vm-mailto": "john.doe@example.com",
+    "vm-attach-file": "true",
+    "vm-message-ext": "wav"
+},
+"variables": {
+    "toll_allow": "domestic,international,local",
+    "accountcode": "9999",
+    "user_context": "default",
+    "effective_caller_id_name": "John Doe",
+    "effective_caller_id_number": "9999",
+    "outbound_caller_id_name": "$${outbound_caller_name}",
+    "outbound_caller_id_number": "$${outbound_caller_id}",
+    "directory_full_name": "John Doe"
+}
+}
+</code></pre>
+</li>
+<li>
+<p>/connect -&gt; (POST) requires the following JSON object</p>
+
+<pre><code>  Comming Soon!
+</code></pre>
+</li>
+<li>
+<p>/voicemail/greeting -&gt; (POST) requires the following JSON object</p>
+
+<pre><code>{
+"access_key": "my super key",
+"exten": "1009",
+"greeting_number": "1"
+} 
+</code></pre>
+</li>
+<li>
+<p>/validate/:queue -&gt; pass queue name returns true or false</p>
+
+<pre><code>{
+    "validate": "true"
+}
+</code></pre>
+</li>
+<li>
+<p>/calls -&gt; Returns a JSON object of calls on the system</p>
+
+<pre><code>{
+"msg": [
+    {
+        "uuid,direction,created,created_epoch,name,state,cid_name,cid_num,ip_addr,dest,presence_id,presence_data,callstate,callee_name,callee_num,callee_direction,call_uuid,hostname,sent_callee_name,sent_callee_num,b_uuid,b_direction,b_created,b_created_epoch,b_name,b_state,b_cid_name,b_cid_num,b_ip_addr,b_dest,b_presence_id,b_presence_data,b_callstate,b_callee_name,b_callee_num,b_callee_direction,b_sent_callee_name,b_sent_callee_num,call_created_epoch": "fb2e5b04-3c00-11e3-96f0-1ff78d1619a2,inbound,2013-10-23 12:34:26,1382546066,sofia/internal/1000@fsbox.example.com:5060,CS_EXECUTE,John Doe,1000,24.2.55.181,1000,1000@fsbox.example.com,,UNHOLD,Outbound Call,1003,SEND,fb2e5b04-3c00-11e3-96f0-1ff78d1619a2,fsbox.example.com,Outbound Call,1003,fb530f9e-3c00-11e3-970e-1ff78d1619a2,outbound,2013-10-23 12:34:26,1382546066,sofia/internal/sip:1000@10.122.1.152:56884,CS_EXCHANGE_MEDIA,John Doe&lt;1000&gt;,8243,24.2.55.181,8233,1000@fsbox.example.com,,UNHOLD,Outbound Call,1000,SEND,User&lt;1000&gt;,1000,1382546068"
+    }
+],
+"error": false,
+"status": 200
+}
+</code></pre>
+</li>
+<li>
+<p>/tools/caller/:password/:cid -&gt; Returns a JSON object of caller id information</p>
+
+<pre><code>      {"msg":"WISCASSET,ME 2175550005","error":false,"status":200 }
+</code></pre>
+</li>
+<li>
+<p>/monitor/:stat -&gt; Returns a Json object of a Digit</p>
+
+<pre><code>
+</code></pre>
+</li>
+</ul><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Richard 'Moose' Genthner <a href="mailto:rgenthner@symplicity.com">rgenthner@symplicity.com</a></p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>BSD</p>
+        </section>
+
+        <footer>
+          Skydas is maintained by <a href="https://github.com/Symplicity">Symplicity</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
