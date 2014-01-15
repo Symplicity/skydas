@@ -15,34 +15,55 @@
 }
 
 body {
-        background: #F9F9F9;
+   background: #F9F9F9;
 }
 
 .container {
-        padding: 20px 10px;
+   padding: 20px 10px;
 }
 
 .row {
-        margin: 0;
+   margin: 0;
 }
 
+.branding {
+	background-color:#79b1d6;
+	padding: 20px 20px 50px 20px;
+	margin: 0 -15px -20px -15px;
+	border-radius: 5px;
+}
+.branding .branding-logo {
+	display:block;
+	width:150px;
+	height:155px;
+	background-image: url('../images/logo.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size:100%;
+	float: left;
+	margin-right:20px;
+}
+.branding h1 {
+	font-size: 6em;
+	color:#fff;
+}
 table {
-        background: #fff;
+   background: #fff;
 }
 
 th {
-        background: #79b1d6;
-        color: #fff;
+   background: #79b1d6;
+   color: #fff;
 }      
 
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
-        border-bottom-width: 1px;
+   border-bottom-width: 1px;
 }      
 
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-        background-color: #f4f5f6;
+   background-color: #f4f5f6;
 }
        
 
