@@ -28,19 +28,20 @@ body {
 
 .branding {
 	background-color:#79b1d6;
-	padding:20px;
+	padding: 20px 20px 50px 20px;
 	margin: 0 -15px -20px -15px;
 	border-radius: 5px;
 }
 .branding .branding-logo {
 	display:block;
 	width:150px;
-	height:125px;
+	height:155px;
 	background-image: url('../images/logo.png');
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 	background-size:100%;
 	float: left;
+	margin-right:20px;
 }
 .branding h1 {
 	font-size: 6em;
