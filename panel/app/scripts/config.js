@@ -4,5 +4,5 @@ var config_data = {
   }
 }
 angular.forEach(config_data,function(key,value) {
-  config_module.constant(value,key);
-}
+  callstatsApp.constant(value,key);
+});
