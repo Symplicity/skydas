@@ -12,6 +12,26 @@ The Panel is all powered by Angular JS and is live updating
 
 ____
 
+Installation
+============
+Please install the ESL PHP module from FreeSwitch Src on 1.2.stable see [PHP ESL](https://wiki.freeswitch.org/wiki/PHP_ESL)
+
+```
+Git clone to your web directory
+git clone https://github.com/Symplicity/skydas
+
+point a Apache / Nginx / Lighttpd host at it
+cd skydas/api/
+cp settings.inc.DIST settings.inc (Updated with your information)
+cd ../panel/app/scripts
+cp config.js.DIST config.js (Update with your API_HOST url)
+
+load in browser supporting js at http://<url>/panel and http://<url>/api/
+```
+
+____
+
+
 Api
 ----
   - Here is a list of commands, all data is returned in JSON
