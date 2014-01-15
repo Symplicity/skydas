@@ -98,12 +98,32 @@ $app->get('/validate/:queue',  function($queue) use ($app){
     }
 });
 
+$app->get('/queues/status/:agent',  function($agent) use ($app){
+    $status = eslCommand("callcenter_config agent get status ".$agent.'@'.FS_DOMAIN);
+    $state = eslCommand("callcenter_config agent get state ".$agent.'@'.FS_DOMAIN);
+    if (!is_null($status) || !is_null($state)){
+    	$app->render(200,array('msg' => array('state' => $state, 'status' => $status)));
+    } else {
+    	$app->render(500,array('msg' => 'Recieved invalid results from agent status request','error'=>true));
+    }
+});
+
 $app->post('/queues/dnd/:agent/:state', function($agent,$state) use ($app){
 	if ($state == 'on'){
-		$output = eslCommand("callcenter_config agent set status ".$agent.FS_DOMAIN." 'On Break'");
-		$output = eslCommand("callcenter_config agent set state ".$agent.FS_DOMAIN." 'Idle'");
+		$output = eslCommand("callcenter_config agent set status ".$agent.'@'.FS_DOMAIN." 'On Break'");
+		$output = eslCommand("callcenter_config agent set state ".$agent.'@'.FS_DOMAIN." 'Idle'");
+		if (!is_null($output)){
+			$app->render(200,array('msg' => 'DND is Set for Agent'));
+		} else {
+			$app->render(500,array('msg' => 'Unable to set DND for Agent', 'error' => true));
+		}
 	} elseif ($state == 'off'){
-		$output = eslCommand("callcenter_config agent set status ".$agent.FS_DOMAIN." 'Available'");
-		$output = eslCommand("callcenter_config agent set state ".$agent.FS_DOMAIN." 'Waiting'");
+		$output = eslCommand("callcenter_config agent set status ".$agent.'@'.FS_DOMAIN." 'Available'");
+		$output = eslCommand("callcenter_config agent set state ".$agent.'@'.FS_DOMAIN." 'Waiting'");
+		if (!is_null($output)){
+			$app->render(200,array('msg' => 'DND is Turned off for Agent'));
+		} else {
+			$app->render(500,array('msg' => 'Unable to disable DND for Agent', 'error' => true));
+		}
 	}
 });
