@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCFF67801888813600ADA0F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF677F1888813600ADA0F7 /* Foundation.framework */; };
+		BCFF67821888813600ADA0F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67811888813600ADA0F7 /* CoreGraphics.framework */; };
+		BCFF67841888813600ADA0F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67831888813600ADA0F7 /* UIKit.framework */; };
+		BCFF67861888813600ADA0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67851888813600ADA0F7 /* CoreData.framework */; };
+		BCFF678C1888813600ADA0F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCFF678A1888813600ADA0F7 /* InfoPlist.strings */; };
+		BCFF678E1888813600ADA0F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFF678D1888813600ADA0F7 /* main.m */; };
+		BCFF67921888813600ADA0F7 /* skydasAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFF67911888813600ADA0F7 /* skydasAppDelegate.m */; };
+		BCFF67951888813600ADA0F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCFF67931888813600ADA0F7 /* Main.storyboard */; };
+		BCFF67981888813600ADA0F7 /* Skydas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCFF67961888813600ADA0F7 /* Skydas.xcdatamodeld */; };
+		BCFF679B1888813600ADA0F7 /* skydasMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFF679A1888813600ADA0F7 /* skydasMasterViewController.m */; };
+		BCFF679E1888813600ADA0F7 /* skydasDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFF679D1888813600ADA0F7 /* skydasDetailViewController.m */; };
+		BCFF67A01888813600ADA0F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCFF679F1888813600ADA0F7 /* Images.xcassets */; };
+		BCFF67A71888813600ADA0F7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67A61888813600ADA0F7 /* XCTest.framework */; };
+		BCFF67A81888813600ADA0F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF677F1888813600ADA0F7 /* Foundation.framework */; };
+		BCFF67A91888813600ADA0F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67831888813600ADA0F7 /* UIKit.framework */; };
+		BCFF67AA1888813600ADA0F7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFF67851888813600ADA0F7 /* CoreData.framework */; };
+		BCFF67B21888813600ADA0F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCFF67B01888813600ADA0F7 /* InfoPlist.strings */; };
+		BCFF67B41888813600ADA0F7 /* SkydasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFF67B31888813600ADA0F7 /* SkydasTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCFF67AB1888813600ADA0F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCFF67741888813500ADA0F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCFF677B1888813600ADA0F7;
+			remoteInfo = Skydas;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCFF677C1888813600ADA0F7 /* Skydas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skydas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCFF677F1888813600ADA0F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BCFF67811888813600ADA0F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BCFF67831888813600ADA0F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BCFF67851888813600ADA0F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BCFF67891888813600ADA0F7 /* Skydas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Skydas-Info.plist"; sourceTree = "<group>"; };
+		BCFF678B1888813600ADA0F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCFF678D1888813600ADA0F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BCFF678F1888813600ADA0F7 /* Skydas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Skydas-Prefix.pch"; sourceTree = "<group>"; };
+		BCFF67901888813600ADA0F7 /* skydasAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skydasAppDelegate.h; sourceTree = "<group>"; };
+		BCFF67911888813600ADA0F7 /* skydasAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skydasAppDelegate.m; sourceTree = "<group>"; };
+		BCFF67941888813600ADA0F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCFF67971888813600ADA0F7 /* Skydas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skydas.xcdatamodel; sourceTree = "<group>"; };
+		BCFF67991888813600ADA0F7 /* skydasMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skydasMasterViewController.h; sourceTree = "<group>"; };
+		BCFF679A1888813600ADA0F7 /* skydasMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skydasMasterViewController.m; sourceTree = "<group>"; };
+		BCFF679C1888813600ADA0F7 /* skydasDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = skydasDetailViewController.h; sourceTree = "<group>"; };
+		BCFF679D1888813600ADA0F7 /* skydasDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = skydasDetailViewController.m; sourceTree = "<group>"; };
+		BCFF679F1888813600ADA0F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCFF67A51888813600ADA0F7 /* SkydasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkydasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCFF67A61888813600ADA0F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BCFF67AF1888813600ADA0F7 /* SkydasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkydasTests-Info.plist"; sourceTree = "<group>"; };
+		BCFF67B11888813600ADA0F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCFF67B31888813600ADA0F7 /* SkydasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkydasTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCFF67791888813600ADA0F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF67821888813600ADA0F7 /* CoreGraphics.framework in Frameworks */,
+				BCFF67861888813600ADA0F7 /* CoreData.framework in Frameworks */,
+				BCFF67841888813600ADA0F7 /* UIKit.framework in Frameworks */,
+				BCFF67801888813600ADA0F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCFF67A21888813600ADA0F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF67A71888813600ADA0F7 /* XCTest.framework in Frameworks */,
+				BCFF67AA1888813600ADA0F7 /* CoreData.framework in Frameworks */,
+				BCFF67A91888813600ADA0F7 /* UIKit.framework in Frameworks */,
+				BCFF67A81888813600ADA0F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCFF67731888813500ADA0F7 = {
+			isa = PBXGroup;
+			children = (
+				BCFF67871888813600ADA0F7 /* Skydas */,
+				BCFF67AD1888813600ADA0F7 /* SkydasTests */,
+				BCFF677E1888813600ADA0F7 /* Frameworks */,
+				BCFF677D1888813600ADA0F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCFF677D1888813600ADA0F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF677C1888813600ADA0F7 /* Skydas.app */,
+				BCFF67A51888813600ADA0F7 /* SkydasTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCFF677E1888813600ADA0F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF677F1888813600ADA0F7 /* Foundation.framework */,
+				BCFF67811888813600ADA0F7 /* CoreGraphics.framework */,
+				BCFF67831888813600ADA0F7 /* UIKit.framework */,
+				BCFF67851888813600ADA0F7 /* CoreData.framework */,
+				BCFF67A61888813600ADA0F7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCFF67871888813600ADA0F7 /* Skydas */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF67901888813600ADA0F7 /* skydasAppDelegate.h */,
+				BCFF67911888813600ADA0F7 /* skydasAppDelegate.m */,
+				BCFF67931888813600ADA0F7 /* Main.storyboard */,
+				BCFF67991888813600ADA0F7 /* skydasMasterViewController.h */,
+				BCFF679A1888813600ADA0F7 /* skydasMasterViewController.m */,
+				BCFF679C1888813600ADA0F7 /* skydasDetailViewController.h */,
+				BCFF679D1888813600ADA0F7 /* skydasDetailViewController.m */,
+				BCFF679F1888813600ADA0F7 /* Images.xcassets */,
+				BCFF67961888813600ADA0F7 /* Skydas.xcdatamodeld */,
+				BCFF67881888813600ADA0F7 /* Supporting Files */,
+			);
+			path = Skydas;
+			sourceTree = "<group>";
+		};
+		BCFF67881888813600ADA0F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF67891888813600ADA0F7 /* Skydas-Info.plist */,
+				BCFF678A1888813600ADA0F7 /* InfoPlist.strings */,
+				BCFF678D1888813600ADA0F7 /* main.m */,
+				BCFF678F1888813600ADA0F7 /* Skydas-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCFF67AD1888813600ADA0F7 /* SkydasTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF67B31888813600ADA0F7 /* SkydasTests.m */,
+				BCFF67AE1888813600ADA0F7 /* Supporting Files */,
+			);
+			path = SkydasTests;
+			sourceTree = "<group>";
+		};
+		BCFF67AE1888813600ADA0F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCFF67AF1888813600ADA0F7 /* SkydasTests-Info.plist */,
+				BCFF67B01888813600ADA0F7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCFF677B1888813600ADA0F7 /* Skydas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCFF67B71888813600ADA0F7 /* Build configuration list for PBXNativeTarget "Skydas" */;
+			buildPhases = (
+				BCFF67781888813600ADA0F7 /* Sources */,
+				BCFF67791888813600ADA0F7 /* Frameworks */,
+				BCFF677A1888813600ADA0F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Skydas;
+			productName = Skydas;
+			productReference = BCFF677C1888813600ADA0F7 /* Skydas.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCFF67A41888813600ADA0F7 /* SkydasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCFF67BA1888813600ADA0F7 /* Build configuration list for PBXNativeTarget "SkydasTests" */;
+			buildPhases = (
+				BCFF67A11888813600ADA0F7 /* Sources */,
+				BCFF67A21888813600ADA0F7 /* Frameworks */,
+				BCFF67A31888813600ADA0F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCFF67AC1888813600ADA0F7 /* PBXTargetDependency */,
+			);
+			name = SkydasTests;
+			productName = SkydasTests;
+			productReference = BCFF67A51888813600ADA0F7 /* SkydasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCFF67741888813500ADA0F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = skydas;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Moose;
+				TargetAttributes = {
+					BCFF67A41888813600ADA0F7 = {
+						TestTargetID = BCFF677B1888813600ADA0F7;
+					};
+				};
+			};
+			buildConfigurationList = BCFF67771888813500ADA0F7 /* Build configuration list for PBXProject "Skydas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCFF67731888813500ADA0F7;
+			productRefGroup = BCFF677D1888813600ADA0F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCFF677B1888813600ADA0F7 /* Skydas */,
+				BCFF67A41888813600ADA0F7 /* SkydasTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCFF677A1888813600ADA0F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF67A01888813600ADA0F7 /* Images.xcassets in Resources */,
+				BCFF678C1888813600ADA0F7 /* InfoPlist.strings in Resources */,
+				BCFF67951888813600ADA0F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCFF67A31888813600ADA0F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF67B21888813600ADA0F7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCFF67781888813600ADA0F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF678E1888813600ADA0F7 /* main.m in Sources */,
+				BCFF679B1888813600ADA0F7 /* skydasMasterViewController.m in Sources */,
+				BCFF67981888813600ADA0F7 /* Skydas.xcdatamodeld in Sources */,
+				BCFF679E1888813600ADA0F7 /* skydasDetailViewController.m in Sources */,
+				BCFF67921888813600ADA0F7 /* skydasAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCFF67A11888813600ADA0F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCFF67B41888813600ADA0F7 /* SkydasTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCFF67AC1888813600ADA0F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCFF677B1888813600ADA0F7 /* Skydas */;
+			targetProxy = BCFF67AB1888813600ADA0F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCFF678A1888813600ADA0F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCFF678B1888813600ADA0F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BCFF67931888813600ADA0F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCFF67941888813600ADA0F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCFF67B01888813600ADA0F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCFF67B11888813600ADA0F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCFF67B51888813600ADA0F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BCFF67B61888813600ADA0F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCFF67B81888813600ADA0F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Skydas/Skydas-Prefix.pch";
+				INFOPLIST_FILE = "Skydas/Skydas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BCFF67B91888813600ADA0F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Skydas/Skydas-Prefix.pch";
+				INFOPLIST_FILE = "Skydas/Skydas-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BCFF67BB1888813600ADA0F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Skydas.app/Skydas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Skydas/Skydas-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SkydasTests/SkydasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BCFF67BC1888813600ADA0F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Skydas.app/Skydas";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Skydas/Skydas-Prefix.pch";
+				INFOPLIST_FILE = "SkydasTests/SkydasTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCFF67771888813500ADA0F7 /* Build configuration list for PBXProject "Skydas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFF67B51888813600ADA0F7 /* Debug */,
+				BCFF67B61888813600ADA0F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCFF67B71888813600ADA0F7 /* Build configuration list for PBXNativeTarget "Skydas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFF67B81888813600ADA0F7 /* Debug */,
+				BCFF67B91888813600ADA0F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BCFF67BA1888813600ADA0F7 /* Build configuration list for PBXNativeTarget "SkydasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCFF67BB1888813600ADA0F7 /* Debug */,
+				BCFF67BC1888813600ADA0F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCFF67961888813600ADA0F7 /* Skydas.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCFF67971888813600ADA0F7 /* Skydas.xcdatamodel */,
+			);
+			currentVersion = BCFF67971888813600ADA0F7 /* Skydas.xcdatamodel */;
+			path = Skydas.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BCFF67741888813500ADA0F7 /* Project object */;
+}
