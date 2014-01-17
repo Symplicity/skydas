@@ -39,13 +39,10 @@ Api
   
 **API Commands**
 
- * /user/:exten -> Returns Username
-    ```
-    {"msg":"Richard Genthner","error":false,"status":200}
-    ```
- * /:queue/agents -> Returns All Agents in Given Queue
-    ```
-    {
+`/:queue/agents` -> (GET) Returns All Agents in a Given Queue
+
+```
+{
     "msg": {
         "1003@default": {
             "name": "Sue Smith",
@@ -62,41 +59,21 @@ Api
     },
     "error": false,
     "status": 200
-    ```
- * /:queue/tiers -> Returns All Agent Tiers in Given Queue
-    ```
-    {
-    "msg": [
-        {
-            "queue": "queue1@default",
-            "agent": "1006@default",
-            "state": "No Answer",
-            "level": "1",
-            "position": "1"
-        },
-        {
-            "queue": "queue1@default",
-            "agent": "1002@default",
-            "state": "No Answer",
-            "level": "1",
-            "position": "1"
-        }
-    ],
-    "error": false,
-    "status": 200
-    }
-    ```
- * /:queue/callers -> Returns All Callerss in Given Queue
-    ```
-    {
+}
+```
+
+`/:queue/callers` -> (GET) Returns All Callers in Given Queue
+
+```
+{
     "msg": [
         {
             "queue": "queue1@default",
             "system": "single_box",
             "uuid": "ce2a7a0c-2ada-11e3-86e3-b1e2db555261",
             "session_uuid": "cacd7fc6-2ada-11e3-86da-b1e2db555261",
-            "cid_number": "+15552785621",
-            "cid_name": "+15552785621",
+            "cid_number": "+19162785621",
+            "cid_name": "+19162785621",
             "system_epoch": "1380660500",
             "joined_epoch": "1380660500",
             "rejoined_epoch": "0",
@@ -111,26 +88,63 @@ Api
     ],
     "error": false,
     "status": 200
-    }
-    ```
- * /status -> Returns FreeSwitch Status
-  ```
-    {
+}
+```
+
+`/queues/fetch` -> (GET) Returns All Queues names in the System
+
+
+```
+{
     "msg": {
-        "UP0years,
-        0days,
-        19hours,
-        34minutes,
-        45seconds,
-        898milliseconds,
-        829microseconds": "FreeSWITCH(Version1.2.13gitc26e2ec2013-09-1815: 05: 04Z)isready"
+        "sales": {
+            "agents": {},
+            "callers": {}
+        },
+        "support": {
+            "agents": {},
+            "callers": {}
+        }
     },
     "error": false,
     "status": 200
-    }
+}
 ```
- * /tiers -> Returns Teirs for all queues
- ```
+
+`/queues/status/:agent` -> (GET) Returns Agent State and Status in Mod_Callcenter
+
+```
+{
+    "msg": {
+        "status": "Available",
+        "state": "Waiting"
+    },
+    "error": false,
+    "status": 200
+}
+```
+
+`/queues/dnd/:agent/:state` -> {on | off} (POST) Returns Array Containing Message
+
+```
+{
+    "msg":"DND is Set for Agent",
+    "error": false,
+    "status": 200
+}
+```
+
+`/validate/:queue` -> pass queue name returns true or false
+
+```
+{
+        "validate": "true"
+}
+```
+
+`/tiers` -> Returns Teirs for all queues
+
+```
 {
     "msg": [
         {
@@ -153,8 +167,19 @@ Api
 }
 ```
 
- *  /create/extension -> (POST) requires the following JSON object -> Returns true or false
- ```
+`/user/:exten` -> (GET) Returns username
+
+```
+{
+    "msg": "Richard Genthner",
+    "error": false,
+    "status": 200
+}
+```
+
+`/create/extension` -> (POST) requires the following JSON object -> Returns true or false
+
+```
 {
     "access_key": "my super key here",
     "action":"reloadxml",
@@ -181,13 +206,15 @@ Api
 }
 ```
 
- * /connect -> (POST) requires the following JSON object
- ```
-    Comming Soon!
- ```
+`/connect` -> (POST) requires the following JSON object
 
- * /voicemail/greeting -> (POST) requires the following JSON object
- ```
+```
+    Comming Soon!
+```
+
+`/voicemail/greeting` -> (POST) requires the following JSON object
+
+```
 {
     "access_key": "my super key",
     "exten": "1009",
@@ -195,15 +222,9 @@ Api
 } 
 ```
 
- * /validate/:queue -> pass queue name returns true or false
- ```
-{
-        "validate": "true"
-}
-```
+`/calls` -> Returns a JSON object of calls on the system
 
- * /calls -> Returns a JSON object of calls on the system
- ```
+```
 {
     "msg": [
         {
@@ -215,15 +236,13 @@ Api
 }
 ```
 
- * /tools/caller/:password/:cid -> Returns a JSON object of caller id information
- ```
+`/tools/caller/:password/:cid` -> Returns a JSON object of caller id information
+
+```
         {"msg":"WISCASSET,ME 2175550005","error":false,"status":200 }
- ```
+```
 
- * /monitor/:stat -> Returns a Json object of a Digit
- ```
-
- ```
+`/monitor/:stat` -> Returns a Json object of a Digit
 
 Author
 ----
