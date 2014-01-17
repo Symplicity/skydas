@@ -79,10 +79,14 @@ $app->get('/:queue/callers',function($queue) use ($app) {
 });
 
 $app->get('/queues/all',function() use ($app) {
-	$queue_list = getQueues();
-	foreach($queue_list as $queue){
-		$queues[$queue] = queueAllData($queue);
-	}
+	$queues = memcache_fetch('queues-all');
+	if (empty($queues)){
+		$queue_list = getQueues();
+		foreach($queue_list as $queue){
+			$queues[$queue] = queueAllData($queue);
+		}
+		memcache_set('queues-all',$queues,15);
+	} 
     if (!empty($queues) || is_array($queues)){
     $app->render(200,array('msg'=>$queues,));
     } else {

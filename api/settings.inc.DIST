@@ -4,15 +4,17 @@
 global $access_key;
 $access_key = "";
 
-/** START MODULE ON/OFF **/
-define('ENABLE_MOD_CALLCENTER',true);
-define('ENABLE_USER_ROUTES',true);
-define('ENABLE_MONITOR_ROUTES',true);
-define('ENABLE_CALL_ROUTES',true);
+/** 
+START MODULES 
 
-/** END MODULE ON/OFF **/
+Loader files names are listed here with out the _loader.php 
+**/
+$loaders = array('mod_callcenter','user','monitor','call','auth');
+
+/** END MODULES **/
 
 /** START MEMCACHE SETTINGS **/
+define('ENABLE_MEMCACHE',false);
 define('MEMCACHE_HOST','localhost');
 define('MEMCACHE_PORT','112211');
 /** END MEMCACHE SETTINGS **/
