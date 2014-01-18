@@ -6,12 +6,15 @@
 
 global $memc;
 
-$memc = memcache_object(MEMCHACHE_HOST, MEMCACHE_PORT);
+$memc = new Memcache;
+$memc->connect(MEMCACHE_HOST, MEMCACHE_PORT);
 
-function memcache_set($key,$value,$timeout) {
+function skycache_set($key,$value,$timeout) {
+    global $memc;
 	$memc->set($key,$value,MEMCACHE_COMPRESSED, 15);
 }
 
-function memcache_fetch($key) {
+function skycache_fetch($key) {
+    global $memc;
 	return $memc->get($key);
 }

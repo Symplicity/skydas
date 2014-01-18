@@ -3,4 +3,4 @@
 /**
 Auth Loader
 */
-require_once('./lib/auth.inc');
+require_once('./lib/auth_lib.inc');
