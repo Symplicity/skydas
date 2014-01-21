@@ -23,17 +23,18 @@ if (!extension_loaded('ESL')) {
 	}
 }
 
-function skydas_autoload($loader_name) {
-    if (file_exits('./lib/loaders/'.$loader_name.'_loader'.php)){
-        require_once('./lib/loaders/'.$loader_name.'_loader.php');
-    } else {
-        throw new Exception("Unable to load $loader_name");
-    }
-}
-
 $app = new \Slim\Slim();
 $app->view(new \JsonApiView());
 $app->add(new \JsonApiMiddleware());
+
+function skydas_autoload($loader_name) {
+  global $app;
+  if (file_exists('./lib/loaders/'.$loader_name.'_loader.php')){
+    require_once('./lib/loaders/'.$loader_name.'_loader.php');
+  } else {
+    throw new Exception("Unable to load $loader_name");
+  }
+}
 
 foreach($loaders as $loader){
     skydas_autoload($loader);

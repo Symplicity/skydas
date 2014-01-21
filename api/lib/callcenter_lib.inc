@@ -28,21 +28,29 @@ function agentListBuilder($agents, $tiers){
 }
 
 function queueAllData($queue){
-	$agents_raw = eslCommand("callcenter_config queue list agents $queue@".FS_DOMAIN);
-    $tiers_raw = eslCommand("callcenter_config queue list tiers $queue@".FS_DOMAIN);
-    $callers_raw = eslCommand("callcenter_config queue list members $queue@".FS_DOMAIN);
-    $agents_output = eslParser($agents_raw);
-    $tiers_output = eslParser($tiers_raw);
-    $callers_rawout = eslParser($callers_raw);
-    if(is_array($callers_rawout)){
-        foreach($callers_rawout as $caller) {
-            $callers_output[] = queueCallerParse($caller);
+    if (ENABLE_MEMCACHE){
+       $queue = skycache_fetch('queues-all'); 
+    }
+    if (empty($queue)){
+    	$agents_raw = eslCommand("callcenter_config queue list agents $queue@".FS_DOMAIN);
+        $tiers_raw = eslCommand("callcenter_config queue list tiers $queue@".FS_DOMAIN);
+        $callers_raw = eslCommand("callcenter_config queue list members $queue@".FS_DOMAIN);
+        $agents_output = eslParser($agents_raw);
+        $tiers_output = eslParser($tiers_raw);
+        $callers_rawout = eslParser($callers_raw);
+        if(is_array($callers_rawout)){
+            foreach($callers_rawout as $caller) {
+               $callers_output[] = queueCallerParse($caller);
+            }
+            $agents = setUserName($agents_output);
+            $agents = agentListBuilder($agents,$tiers_output);
+            $queues = array('agents'=>$agents,'callers'=>$callers_output);
+        } else {
+            $queues = null;
         }
-        $agents = setUserName($agents_output);
-        $agents = agentListBuilder($agents,$tiers_output);
-        $queues = array('agents'=>$agents,'callers'=>$callers_output);
-    } else {
-        $queues = null;
+        if (ENABLE_MEMCACHE) {
+            skycache_set($queue,$queues,15)
+        }
     }
     return $queues;
 }
