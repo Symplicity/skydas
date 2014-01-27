@@ -49,7 +49,7 @@ function queueAllData($queue){
             $queues = null;
         }
         if (ENABLE_MEMCACHE) {
-            skycache_set($queue,$queues,15)
+            skycache_set($queue,$queues,15);
         }
     }
     return $queues;
