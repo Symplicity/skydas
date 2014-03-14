@@ -27,12 +27,12 @@ function agentListBuilder($agents, $tiers){
 	return $_agents;
 }
 
-function queueAllData($queue){
-    if (ENABLE_MEMCACHE){
-       $queue = skycache_fetch('queues-all'); 
+function queueAllData($queue) {
+    if (ENABLE_MEMCACHE) {
+      $queues = skycache_fetch('queues'); 
     }
-    if (empty($queue)){
-    	$agents_raw = eslCommand("callcenter_config queue list agents $queue@".FS_DOMAIN);
+    if (empty($queues) || !$queues) {
+      $agents_raw = eslCommand("callcenter_config queue list agents $queue@".FS_DOMAIN); 
         $tiers_raw = eslCommand("callcenter_config queue list tiers $queue@".FS_DOMAIN);
         $callers_raw = eslCommand("callcenter_config queue list members $queue@".FS_DOMAIN);
         $agents_output = eslParser($agents_raw);
@@ -49,7 +49,7 @@ function queueAllData($queue){
             $queues = null;
         }
         if (ENABLE_MEMCACHE) {
-            skycache_set($queue,$queues,15);
+            skycache_set('queues',$queues,15);
         }
     }
     return $queues;
