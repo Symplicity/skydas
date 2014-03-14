@@ -29,7 +29,7 @@ function agentListBuilder($agents, $tiers){
 
 function queueAllData($queue) {
     if (ENABLE_MEMCACHE) {
-      $queues = skycache_fetch('queues'); 
+      $queues = skycache_fetch("queues_{$queue}"); 
     }
     if (empty($queues) || !$queues) {
       $agents_raw = eslCommand("callcenter_config queue list agents $queue@".FS_DOMAIN); 
@@ -49,7 +49,7 @@ function queueAllData($queue) {
             $queues = null;
         }
         if (ENABLE_MEMCACHE) {
-            skycache_set('queues',$queues,15);
+            skycache_set("queues_{$queue}", $queues, 15);
         }
     }
     return $queues;
