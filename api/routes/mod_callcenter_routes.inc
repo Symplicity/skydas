@@ -80,11 +80,20 @@ $app->get('/:queue/callers',function($queue) use ($app) {
 
 $app->get('/queues/all',function() use ($app) {
 	$queue_list = getQueues();
-	foreach($queue_list as $queue){
-		$queues[$queue] = queueAllData($queue);
-	}
+    if (ENABLE_MEMCACHE) {
+        $queues = skycache_fetch('allqueues');
+    }
+    if (empty($queues) || !$queues){
+    	foreach($queue_list as $queue){
+    		$queues[$queue] = queueAllData($queue);
+    	}
+        if (ENABLE_MEMCACHE){
+            skycache_set('allqueues',$queues,15);
+        }
+    }
+    
     if (!empty($queues) || is_array($queues)){
-    $app->render(200,array('msg'=>$queues,));
+        $app->render(200,array('msg'=>$queues,));
     } else {
         $app->render(400, array('msg' => 'Error Getting Queue Data', 'error' => true));
     }
