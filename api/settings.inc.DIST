@@ -29,7 +29,7 @@ define('FS_ESL_PASSWORD','ClueCon');
 define('CALLCENTER_QUEUES','queue1,queue2,queue3');
 define('FS_CONF_DIR','/etc/freeswitch');
 define('FS_DOMAIN','default');
-define('FS_CID_PASSWORD','mycidlookuppassword')
+define('FS_CID_PASSWORD','mycidlookuppassword');
 /** END FS SETTINGS **/
 
 /** START CIDNAME API VALUES **/

@@ -33,7 +33,7 @@ $app->get('/monitor/:stat', function($stat) use ($app) {
 $app->get('/calls',function() use ($app) {
 	$output = eslCommand("show calls");
 	$tiers = eslParser($output);
-    if (!is_null($teirs)){
+    if (!is_null($tiers)){
         $app->render(200,array('msg' => $tiers,));
     } else {
         $app->render(400, array('msg' => 'ESL failed to produce usable data', 'error' => true));
